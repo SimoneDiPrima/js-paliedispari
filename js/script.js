@@ -27,16 +27,11 @@ const palword = palWord(prompt(`scrivi una parola e io ti diro se questa è pali
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-
+let questionNumberstart = prompt(`pari o dispari?`);
+console.log(`hai scelto `+ questionNumberstart);
 let numberUser = parseInt(prompt(`scegli un numero da 1 a 5:`));
 console.log(numberUser);
 
-if(numberUser % 2 == 0){
-    console.log(`ok hai scelto pari!`)
-}
-else{
-    console.log(`ok hai scelto dispari!`);
-}
 function randomCpunumber(min=1 , max=5){
     const randomNumber = Math.floor(Math.random()*(max+1 - min)+min);
     return randomNumber;
@@ -58,14 +53,11 @@ function isEven(){
 }
     const somma = isEven();
 
-    if(cpuNumber > numberUser){
-        console.log(`Ha vinto il computer!`);
+    if(somma % 2 == 0 && questionNumberstart %2 === 0){
+        console.log(`Bravo hai vinto!!`);
     }
-    else if(cpuNumber === numberUser){
-        console.log(`incredibile pareggio!!`)
-    }
-    else{
+   
+    else if(somma % 2 !=0 && questionNumberstart %2 !=0 ){
         console.log(`bravo hai vinto!!`);
     }
-
-
+    else{console.log(`ritenta sarai piu fortunato`)};
